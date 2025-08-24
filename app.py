@@ -14,5 +14,9 @@ def user_dashboard():
 def profile(user_id):
     return render_template('profile.html', user_id=user_id)
 
+# For Vercel deployment - simple WSGI app export
 if __name__ == '__main__':
     app.run()
+else:
+    # Export the Flask app for Vercel
+    application = app
